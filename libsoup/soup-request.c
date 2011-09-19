@@ -141,7 +141,7 @@ soup_request_initable_init (GInitable     *initable,
 
 	if (!request->priv->uri) {
 		g_set_error (error, SOUP_REQUESTER_ERROR, SOUP_REQUESTER_ERROR_BAD_URI,
-			     _("No URI provided"));
+			     "No URI provided");
 		return FALSE;
 	}
 
@@ -151,7 +151,7 @@ soup_request_initable_init (GInitable     *initable,
 	if (!ok && error) {
 		char *uri_string = soup_uri_to_string (request->priv->uri, FALSE);
 		g_set_error (error, SOUP_REQUESTER_ERROR, SOUP_REQUESTER_ERROR_BAD_URI,
-			     _("Invalid '%s' URI: %s"),
+			     "Invalid '%s' URI: %s",
 			     request->priv->uri->scheme,
 			     uri_string);
 		g_free (uri_string);

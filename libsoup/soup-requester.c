@@ -194,7 +194,7 @@ soup_requester_request (SoupRequester *requester, const char *uri_string,
 	uri = soup_uri_new (uri_string);
 	if (!uri) {
 		g_set_error (error, SOUP_REQUESTER_ERROR, SOUP_REQUESTER_ERROR_BAD_URI,
-			     _("Could not parse URI '%s'"), uri_string);
+			     "Could not parse URI '%s'", uri_string);
 		return NULL;
 	}
 
@@ -215,7 +215,7 @@ soup_requester_request_uri (SoupRequester *requester, SoupURI *uri,
 	if (!request_type) {
 		g_set_error (error, SOUP_REQUESTER_ERROR,
 			     SOUP_REQUESTER_ERROR_UNSUPPORTED_URI_SCHEME,
-			     _("Unsupported URI scheme '%s'"), uri->scheme);
+			     "Unsupported URI scheme '%s'", uri->scheme);
 		return NULL;
 	}
 

@@ -104,7 +104,7 @@ soup_request_file_ensure_file (SoupRequestFile  *file,
 	}
 
 	g_set_error (error, SOUP_REQUESTER_ERROR, SOUP_REQUESTER_ERROR_UNSUPPORTED_URI_SCHEME,
-		     _("Unsupported URI scheme '%s'"), uri->scheme);
+		     "Unsupported URI scheme '%s'", uri->scheme);
 	return FALSE;
 }
 
