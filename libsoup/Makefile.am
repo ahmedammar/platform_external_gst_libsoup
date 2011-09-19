@@ -176,8 +176,8 @@ libsoup_2_4_la_SOURCES =		\
 	soup-ssl.c	     		\
 	soup-status.c			\
 	soup-uri.c			\
-	soup-value-utils.c		\
-	soup-xmlrpc.c
+	soup-value-utils.c
+#	soup-xmlrpc.c
 
 if BUILD_LIBSOUP_GNOME
 
@@ -281,3 +281,17 @@ EXTRA_DIST=				\
 	soup-marshal.list		\
 	soup-enum-types.h.tmpl		\
 	soup-enum-types.c.tmpl
+
+Android.mk: Makefile.am $(BUILT_SOURCES)
+	androgenizer \
+	-:PROJECT libsoup -:SHARED libsoup-2.4 \
+	 -:TAGS eng debug \
+         -:REL_TOP $(top_srcdir) -:ABS_TOP $(abs_top_srcdir) \
+	 -:SOURCES $(libsoup_2_4_la_SOURCES) \
+	 -:CFLAGS $(DEFS) $(INCLUDES) $(libsoup_2_4_la_CFLAGS) \
+	 -:LDFLAGS $(libsoup_2_4_la_LDFLAGS) \
+	           $(libsoup_2_4_la_LIBADD) \
+	           -ldl \
+	 -:PASSTHROUGH LOCAL_ARM_MODE:=arm \
+		       LOCAL_MODULE_PATH:='$$(TARGET_OUT)/lib' \
+	> $@

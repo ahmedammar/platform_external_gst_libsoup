@@ -78,9 +78,11 @@ if test "$GLIB_LIBS" = ""; then
 fi
 GLIB_CFLAGS="$GLIB_CFLAGS -DG_DISABLE_SINGLE_INCLUDES"
 
-PKG_CHECK_MODULES(XML, libxml-2.0)
+#PKG_CHECK_MODULES(XML, libxml-2.0)
 AC_SUBST(XML_CFLAGS)
 AC_SUBST(XML_LIBS)
+XML_CFLAGS="$XML_CFLAGS"
+XML_LIBS="$XML_LIBS"
 
 dnl ***********************
 dnl *** Check for Win32 ***
@@ -350,7 +352,6 @@ dnl *************************
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([
 	libsoup-2.4.pc
-	libsoup-gnome-2.4.pc
 	Makefile
 	libsoup-zip
 	libsoup/Makefile
