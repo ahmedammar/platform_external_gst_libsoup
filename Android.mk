@@ -21,7 +21,7 @@ libsoup-configure:
 	LDFLAGS="$(CONFIGURE_LDFLAGS)" \
 	CPP=$(CONFIGURE_CPP) \
 	CPPFLAGS="$(CONFIGURE_CPPFLAGS)" \
-	PKG_CONFIG_PATH="$(CONFIGURE_PKG_CONFIG_PATH)" \
+	PKG_CONFIG_LIBDIR="$(CONFIGURE_PKG_CONFIG_PATH)" \
 	PKG_CONFIG_TOP_BUILD_DIR=/ \
 	XML_CFLAGS="-I$(abspath $(TOP)/external/libxml2/include/) -I$(abspath $(TOP)/external/icu4c/common)" \
 	XML_LIBS="-lxml2" \
