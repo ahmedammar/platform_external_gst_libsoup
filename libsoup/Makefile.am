@@ -285,7 +285,7 @@ EXTRA_DIST=				\
 Android.mk: Makefile.am $(BUILT_SOURCES)
 	androgenizer \
 	-:PROJECT libsoup -:SHARED libsoup-2.4 \
-	 -:TAGS eng debug \
+	 -:TAGS user eng debug \
          -:REL_TOP $(top_srcdir) -:ABS_TOP $(abs_top_srcdir) \
 	 -:SOURCES $(libsoup_2_4_la_SOURCES) \
 	 -:CFLAGS $(DEFS) $(INCLUDES) $(libsoup_2_4_la_CFLAGS) \
